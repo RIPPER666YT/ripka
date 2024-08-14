@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Геймерский Магазин</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c00; /* Красный фон для всей страницы */
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Убираем горизонтальную прокрутку */
+        }
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000; /* Черный фон для заголовка */
+            padding: 10px 20px;
+        }
+        h1 {
+            color: #ff0000; /* Красный цвет для заголовка */
+            animation: blink 1s infinite; /* Эффект мерцания */
+            flex: 1; /* Заголовок занимает доступное пространство */
+        }
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        .menu {
+            display: none;
+            position: absolute;
+            top: 60px; /* Меню появляется ниже заголовка */
+            right: 20px;
+            background-color: #000; /* Черный фон для меню */
+            border: 1px solid #fff;
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 1000; /* Чтобы меню было выше других элементов */
+        }
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+        }
+        .menu-button {
+            background-color: #333333; /* Темно-серый фон для кнопки */
+            border: none;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px; /* Закругление кнопки */
+            width: 120px; /* Установка фиксированной ширины кнопки */
+            transition: color 0.3s, box-shadow 0.3s; /* Плавный переход цвета текста и тени */
+        }
+        .menu-button:hover {
+            color: #ff0000; /* Красный цвет текста при наведении */
+            box-shadow: 0 0 10px red; /* Обводка красным светом */
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Адаптивное количество колонок */
+            gap: 10px;
+            padding: 20px;
+            max-width: 1200px; /* Максимальная ширина для контейнера */
+            margin: 0 auto; /* Центрируем контейнер */
+        }
+        .product {
+            background-color: #333;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            width: 100%; /* Установка ширины на 100% */
+            aspect-ratio: 1; /* Соотношение сторон 1:1 для квадратов */
+        }
+        .product h2 {
+            font-size: 16px;
+            margin: 0; /* Убираем отступы */
+        }
+
+        /* Стиль для мобильных устройств */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .menu-button {
+                width: 100%; /* Кнопка занимает всю ширину на мобильных устройствах */
+                margin-top: 10px; /* Отступ сверху */
+            }
+            .menu {
+                right: 0; /* Меню выравнивается по правому краю */
+                width: 100%; /* Меню занимает всю ширину */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Геймерский Магазин</h1>
+    <button class="menu-button" onclick="toggleMenu()">Меню</button>
+</header>
+
+<div class="menu" id="menu">
+    <a href="#">Главная</a>
+    <a href="#">Товары</a>
+    <a href="#">Контакты</a>
+    <a href="#">Отзывы</a>
+    <a href="#">Поддержка</a>
+</div>
+
+<div class="products">
+    <!-- Генерация товаров с названиями -->
+    <div class="product">
+        <h2>Наушники</h2>
+    </div>
+    <div class="product">
+        <h2>Кресло</h2>
+    </div>
+    <div class="product">
+        <h2>Микрофон</h2>
+    </div>
+    <div class="product">
+        <h2>Геймпад</h2>
+    </div>
+    <div class="product">
+        <h2>VR-очки</h2>
+    </div>
+    <div class="product">
+        <h2>Клавиатура</h2>
+    </div>
+    <div class="product">
+        <h2>Мышка</h2>
+    </div>
+    <div class="product">
+        <h2>Наушники</h2>
+    </div>
+    <div class="product">
+        <h2>Геймпад</h2>
+    </div>
+    <div class="product">
+        <h2>Кресло</h2>
+    </div>
+    <div class="product">
+        <h2>Микрофон</h2>
+    </div>
+    <div class="product">
+        <h2>VR-очки</h2>
+    </div>
+    <div class="product">
+        <h2>Клавиатура</h2>
+    </div>
+    <div class="product">
+        <h2>Мышка</h2>
+    </div>
+    <div class="product">
+        <h2>Наушники</h2>
+    </div>
+    <div class="product">
+        <h2>Геймпад</h2>
+    </div>
+    <div class="product">
+        <h2>Кресло</h2>
+    </div>
+    <div class="product">
+        <h2>Микрофон</h2>
+    </div>
+    <div class="product">
+        <h2>VR-очки</h2>
+    </div>
+    <div class="product">
+        <h2>Клавиатура</h2>
+    </div>
+    <div class="product">
+        <h2>Мышка</h2>
+    </div>
+    <div class="product">
+        <h2>Наушники</h2>
+    </div>
+    <div class="product">
+        <h2>Геймпад</h2>
+    </div>
+    <div class="product">
+        <h2>Кресло</h2>
+    </div>
+    <div class="product">
+        <h2>Микрофон</h2>
+    </div>
+    <div class="product">
+        <h2>VR-очки</h2>
+    </div>
+</div>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('menu');
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
+
+</body>
+</html>
